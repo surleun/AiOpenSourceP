@@ -1,0 +1,51 @@
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var edit1: EditText
+    private lateinit var edit2: EditText
+    private lateinit var btnAdd: Button
+    private lateinit var btnSub: Button
+    private lateinit var btnMul: Button
+    private lateinit var btnDiv: Button
+    private lateinit var textResult: TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        title = "초간단 계산기"
+
+        edit1 = findViewById(R.id.Edit1)
+        edit2 = findViewById(R.id.Edit2)
+        btnAdd = findViewById(R.id.BtnAdd)
+        btnSub = findViewById(R.id.BtnSub)
+        btnMul = findViewById(R.id.BtnMul)
+        btnDiv = findViewById(R.id.BtnDiv)
+        textResult = findViewById(R.id.TextResult)
+
+        btnAdd.setOnTouchListener { _, _ ->
+            calculate('+')
+            false
+        }
+
+        btnSub.setOnTouchListener { _, _ ->
+            calculate('-')
+            false
+        }
+
+        btnMul.setOnTouchListener { _, _ ->
+            calculate('*')
+            false
+        }
+
+        btnDiv.setOnTouchListener { _, _ ->
+            calculate('/')
+            false
+        }
+    }
+
+    private fun calculate(op: Char) {
+        val num1 = edit1.text.toString()
+        val num2 = edit2.text.toString()
+
+        textResult.text = "계산 결과: $result"
+    }
+}
