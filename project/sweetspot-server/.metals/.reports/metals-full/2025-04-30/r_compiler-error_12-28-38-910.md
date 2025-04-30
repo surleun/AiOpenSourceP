@@ -1,32 +1,36 @@
+file://<WORKSPACE>/src/main/java/com/sweetspot/server/user/UserController.java
+### java.util.NoSuchElementException: next on empty iterator
+
+occurred in the presentation compiler.
+
+presentation compiler configuration:
+
+
+action parameters:
+uri: file://<WORKSPACE>/src/main/java/com/sweetspot/server/user/UserController.java
+text:
+```scala
 package com.sweetspot.server.user;
 
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
-import com.sweetspot.server.user.DTO.UserLoginRequestDTO;
-import com.sweetspot.server.user.DTO.UserSignUpDTO;
-
-import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
 
     private final UserService userService;
-    private final PasswordEncoder passwordEncoder;
 
     //@Autowired
-    public UserController(UserService userService, PasswordEncoder passwordEncoder) {
+    public UserController(UserService userService) {
         this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
     }
 
     // 사용자 등록 API
     @PostMapping("/register")
-    public ResponseEntity<UserEntity> registerUser(@RequestBody UserSignUpDTO userDTO) {
+    public ResponseEntity<UserEntity> registerUser(@RequestBody UserDTO userDTO) {
         try {
             UserEntity userEntity = userService.registerUser(userDTO);
             return new ResponseEntity<>(userEntity, HttpStatus.CREATED);
@@ -34,19 +38,6 @@ public class UserController {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
-
-    @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody UserLoginRequestDTO loginRequest, HttpSession session) {
-        UserEntity user = userService.getUserByEmail(loginRequest.getEmail());
-        
-        if (user == null || !passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            return new ResponseEntity<>("이메일 또는 비밀번호가 잘못되었습니다.", HttpStatus.UNAUTHORIZED);
-        }
-
-        session.setAttribute("user", user.getUserId()); // 세션에 사용자 ID 저장
-        return ResponseEntity.ok("로그인 성공");
-    }
-
 
     /*
     // 이메일로 사용자 조회 API
@@ -83,3 +74,30 @@ public class UserController {
     }
      */
 }
+
+```
+
+
+
+#### Error stacktrace:
+
+```
+scala.collection.Iterator$$anon$19.next(Iterator.scala:973)
+	scala.collection.Iterator$$anon$19.next(Iterator.scala:971)
+	scala.collection.mutable.MutationTracker$CheckedIterator.next(MutationTracker.scala:76)
+	scala.collection.IterableOps.head(Iterable.scala:222)
+	scala.collection.IterableOps.head$(Iterable.scala:222)
+	scala.collection.AbstractIterable.head(Iterable.scala:935)
+	dotty.tools.dotc.interactive.InteractiveDriver.run(InteractiveDriver.scala:164)
+	dotty.tools.pc.CachingDriver.run(CachingDriver.scala:45)
+	dotty.tools.pc.WithCompilationUnit.<init>(WithCompilationUnit.scala:31)
+	dotty.tools.pc.SimpleCollector.<init>(PcCollector.scala:351)
+	dotty.tools.pc.PcSemanticTokensProvider$Collector$.<init>(PcSemanticTokensProvider.scala:63)
+	dotty.tools.pc.PcSemanticTokensProvider.Collector$lzyINIT1(PcSemanticTokensProvider.scala:63)
+	dotty.tools.pc.PcSemanticTokensProvider.Collector(PcSemanticTokensProvider.scala:63)
+	dotty.tools.pc.PcSemanticTokensProvider.provide(PcSemanticTokensProvider.scala:88)
+	dotty.tools.pc.ScalaPresentationCompiler.semanticTokens$$anonfun$1(ScalaPresentationCompiler.scala:111)
+```
+#### Short summary: 
+
+java.util.NoSuchElementException: next on empty iterator

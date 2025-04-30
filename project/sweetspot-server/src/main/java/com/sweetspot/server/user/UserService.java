@@ -5,6 +5,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sweetspot.server.user.DTO.UserSignUpDTO;
+
 @Service
 public class UserService {
 
@@ -19,7 +21,7 @@ public class UserService {
 
     // 사용자 등록
     @Transactional
-    public UserEntity registerUser(UserDTO userDTO) {
+    public UserEntity registerUser(UserSignUpDTO userDTO) {
         // 이메일 중복 확인
         if (userRepository.findByEmail(userDTO.getEmail()) != null) {
             throw new IllegalArgumentException("이미 등록된 이메일입니다.");
@@ -53,7 +55,7 @@ public class UserService {
 
     // 사용자 정보 업데이트
     @Transactional
-    public UserEntity updateUser(Long userId, UserDTO userDTO) {
+    public UserEntity updateUser(Long userId, UserSignUpDTO userDTO) {
         UserEntity userEntity = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("사용자를 찾을 수 없습니다."));
         

@@ -1,8 +1,8 @@
-package com.sweetspot.server.user;
+package com.sweetspot.server.user.DTO;
 
 import java.time.LocalDateTime;
 
-public class UserDTO {
+public class UserSignUpDTO {
     private Long userId; // 사용자 고유 ID
     private String email; // 이메일
     private String password; // 비밀번호
