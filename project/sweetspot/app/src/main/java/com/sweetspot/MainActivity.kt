@@ -8,6 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.sweetspot.api.MessageResponse
 import com.sweetspot.api.RetrofitClient
+import android.widget.Button
+import android.content.Intent
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,6 +22,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
+        val signUpButton: Button = findViewById(R.id.sign_up)
+
+        signUpButton.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 안드로이드 스튜디오랑 spring boot 연결 확인
         textView = findViewById(R.id.textView) // xml에 정의된 TextView를 가져옴
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
