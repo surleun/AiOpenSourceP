@@ -9,7 +9,7 @@
 ## 개발 환경
 
 **Backend**: Java 17, Spring Boot 3.4.5, Maven 3.9.9, MySQL 9.3.0  
-**Frontend**: 
+**Android App**: Android Studio, Kotlin, XML
 
 ## 노션 링크
 
