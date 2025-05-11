@@ -7,9 +7,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import com.sweetspot.server.user.DTO.UserLoginRequestDTO;
+import com.sweetspot.server.user.DTO.UserLoginResponseDTO;
 import com.sweetspot.server.user.DTO.UserRegisterDTO;
 import com.sweetspot.server.user.DTO.UserRegisterEmailCheckRequestDTO;
-import com.sweetspot.server.user.DTO.UserRegisterErrorResponseDTO;
+// import com.sweetspot.server.user.DTO.UserRegisterErrorResponseDTO;
 import com.sweetspot.server.user.DTO.UserRegisterPhoneNumberCheckRequestDTO;
 
 import jakarta.servlet.http.HttpSession;
@@ -32,19 +33,12 @@ public class UserController {
 
     // 회원가입
     @PostMapping("/register")
-    public ResponseEntity<?> registerUser(@RequestBody UserRegisterDTO userDTO) {
+    public ResponseEntity<UserEntity> registerUser(@RequestBody UserRegisterDTO userDTO) {
         try {
             UserEntity userEntity = userService.registerUser(userDTO);
             return new ResponseEntity<>(userEntity, HttpStatus.CREATED);
         } catch (IllegalArgumentException e) {
-            String message = e.getMessage();
-            String field = message.contains("이메일") ? "email" :
-                        message.contains("전화번호") ? "phoneNumber" : "unknown";
-
-            return new ResponseEntity<>(
-                new UserRegisterErrorResponseDTO(message, field),
-                HttpStatus.BAD_REQUEST
-            );
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -86,13 +80,26 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody UserLoginRequestDTO loginRequest, HttpSession session) {
         UserEntity user = userService.getUserByEmail(loginRequest.getEmail());
-        
+
         if (user == null || !passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
-            return new ResponseEntity<>("이메일 또는 비밀번호가 잘못되었습니다.", HttpStatus.UNAUTHORIZED);
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "이메일 또는 비밀번호가 잘못되었습니다.");
+            return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
         }
 
-        session.setAttribute("user", user.getUserId()); // 세션에 사용자 ID 저장
-        return ResponseEntity.ok("로그인 성공");
+        session.setAttribute("user", user.getUserId());
+
+        // 비밀번호를 제외한 정보로 응답 DTO 구성
+        UserLoginResponseDTO responseDTO = new UserLoginResponseDTO(
+            user.getUserId(),
+            user.getEmail(),
+            user.getNickname(),
+            user.getPhoneNumber(),
+            user.isPhoneVerified(),
+            user.getCreatedAt()
+        );
+
+        return ResponseEntity.ok(responseDTO);
     }
 
 
