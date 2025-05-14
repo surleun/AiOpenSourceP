@@ -1,4 +1,4 @@
-package com.sweetspot.server.user.DTO;
+package com.sweetspot.server.user.DTO.check;
 
 public class UserRegisterEmailCheckRequestDTO {
     private String email;

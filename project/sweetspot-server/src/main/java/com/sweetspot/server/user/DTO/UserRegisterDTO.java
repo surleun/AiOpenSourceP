@@ -10,6 +10,8 @@ public class UserRegisterDTO {
     private String phoneNumber; // 전화번호
     private boolean isPhoneVerified; // 전화번호 인증 여부
     private LocalDateTime createdAt; // 가입일
+    private String profileImageUrl; //프로필 이미지
+    private String profileImageName; //이미지 파일 이름
 
     // Getters and Setters
     public Long getUserId() { return userId; }
@@ -33,5 +35,9 @@ public class UserRegisterDTO {
     public LocalDateTime getCreatedAt() { return createdAt; } 
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
-    // 추가적인 생성자나 메서드 등을 필요에 따라 추가할 수 있다.
+    public String getProfileImageName() { return profileImageName; }
+    public void setProfileImageName(String profileImageName) { this.profileImageName = profileImageName; }
+
+    public String getProfileImageUrl() { return profileImageUrl; }
+    public void setProfileImageUrl(String profileImageUrl) { this.profileImageUrl = profileImageUrl; }
 }
