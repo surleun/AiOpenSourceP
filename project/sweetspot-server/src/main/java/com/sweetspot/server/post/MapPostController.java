@@ -1,10 +1,15 @@
 package com.sweetspot.server.post;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.sweetspot.server.post.like.PostLikeRequestDto;
 
 @RestController
 @RequestMapping("/api/posts")
@@ -36,5 +41,36 @@ public class MapPostController {
         } else {
             return ResponseEntity.badRequest().build(); // 실패 시 400 Bad Request
         }
+    }
+
+    // 게시글 좋아요
+    @PostMapping("/like")
+    public ResponseEntity<?> likePost(@RequestBody PostLikeRequestDto requestDto) {
+        boolean liked = mapPostService.likePost(requestDto.getUserId(), requestDto.getPostId());
+
+        if (liked) {
+            return ResponseEntity.ok().build(); // 성공
+        } else {
+            return ResponseEntity.badRequest().build(); // 중복 좋아요 방지
+        }
+    }
+
+    // 게시글 좋아요 취소
+    @PostMapping("/unlike")
+    public ResponseEntity<?> unlikePost(@RequestBody PostLikeRequestDto requestDto) {
+        boolean unliked = mapPostService.unlikePost(requestDto.getUserId(), requestDto.getPostId());
+
+        if (unliked) {
+            return ResponseEntity.ok().build(); // 성공
+        } else {
+            return ResponseEntity.badRequest().build(); // 실패 (기존 좋아요 없음)
+        }
+    }
+
+    //인기 게시글 조회
+    @GetMapping("/popular")
+    public ResponseEntity<List<MapPostResponseDto>> getPopularPostsToday() {
+        List<MapPostResponseDto> popularPosts = mapPostService.getTop10PopularPostsToday();
+        return ResponseEntity.ok(popularPosts);
     }
 }
