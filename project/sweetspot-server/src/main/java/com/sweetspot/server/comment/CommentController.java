@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sweetspot.server.comment.DTO.CommentDeleteRequestDTO;
+import com.sweetspot.server.comment.DTO.CommentRequestDTO;
+import com.sweetspot.server.comment.DTO.CommentResponseDTO;
 import com.sweetspot.server.comment.like.CommentLikeRequestDto;
 
 @RestController

@@ -5,6 +5,9 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sweetspot.server.comment.DTO.CommentDeleteRequestDTO;
+import com.sweetspot.server.comment.DTO.CommentRequestDTO;
+import com.sweetspot.server.comment.DTO.CommentResponseDTO;
 import com.sweetspot.server.comment.like.CommentLikeEntity;
 import com.sweetspot.server.comment.like.CommentLikeRepository;
 import com.sweetspot.server.post.MapPostRepository;

@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sweetspot.server.post.DTO.MapPostDeleteRequestDTO;
+import com.sweetspot.server.post.DTO.MapPostListResponseDTO;
+import com.sweetspot.server.post.DTO.MapPostPopularResponseDTO;
+import com.sweetspot.server.post.DTO.MapPostRequestDTO;
+import com.sweetspot.server.post.DTO.MapPostResponseDTO;
+import com.sweetspot.server.post.DTO.MapPostDetailResponseDTO;
+import com.sweetspot.server.post.DTO.MapPostDetailRequestDTO;
 import com.sweetspot.server.post.like.PostLikeRequestDto;
 
 @RestController
@@ -22,9 +29,9 @@ public class MapPostController {
 
     // 게시글 생성
     @PostMapping("/create")
-    public ResponseEntity<?> createPost(@RequestBody MapPostRequestDto requestDto) {
+    public ResponseEntity<?> createPost(@RequestBody MapPostRequestDTO requestDto) {
         try {
-            MapPostResponseDto responseDto = mapPostService.createPost(requestDto);
+            MapPostResponseDTO responseDto = mapPostService.createPost(requestDto);
             return ResponseEntity.ok(responseDto);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().build();
@@ -33,7 +40,7 @@ public class MapPostController {
 
     // 게시글 삭제
     @PostMapping("/delete")
-    public ResponseEntity<?> deletePost(@RequestBody MapPostDeleteRequestDto requestDto) {
+    public ResponseEntity<?> deletePost(@RequestBody MapPostDeleteRequestDTO requestDto) {
         boolean deleted = mapPostService.deletePost(requestDto.getPostId(), requestDto.getUserId());
 
         if (deleted) {
@@ -69,8 +76,26 @@ public class MapPostController {
 
     //인기 게시글 조회
     @GetMapping("/popular")
-    public ResponseEntity<List<MapPostResponseDto>> getPopularPostsToday() {
-        List<MapPostResponseDto> popularPosts = mapPostService.getTop10PopularPostsToday();
+    public ResponseEntity<List<MapPostPopularResponseDTO>> getPopularPosts() {
+        List<MapPostPopularResponseDTO> popularPosts = mapPostService.getPopularPostsOfDay();
         return ResponseEntity.ok(popularPosts);
+    }
+
+    // 전체 게시글 리스트 조회
+    @GetMapping("/list")
+    public ResponseEntity<List<MapPostListResponseDTO>> getAllPosts() {
+        List<MapPostListResponseDTO> posts = mapPostService.getAllPosts();
+        return ResponseEntity.ok(posts);
+    }
+
+    //게시글 조회
+    @PostMapping("/detail")
+    public ResponseEntity<?> getPostDetail(@RequestBody MapPostDetailRequestDTO requestDto) {
+        try {
+            MapPostDetailResponseDTO responseDto = mapPostService.getPostById(requestDto.getPostId());
+            return ResponseEntity.ok(responseDto);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }

@@ -10,7 +10,17 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.sweetspot.server.comment.CommentRepository;
+import com.sweetspot.server.comment.DTO.CommentDetailDTO;
 import com.sweetspot.server.pin.PinRepository;
+import com.sweetspot.server.pin.PinInfoDTO;
+import com.sweetspot.server.post.DTO.MapPostListResponseDTO;
+import com.sweetspot.server.post.DTO.MapPostPopularResponseDTO;
+import com.sweetspot.server.post.DTO.MapPostRequestDTO;
+import com.sweetspot.server.post.DTO.MapPostResponseDTO;
+import com.sweetspot.server.post.image.PostImageDetailDTO;
+import com.sweetspot.server.post.image.PostImageRepository;
+import com.sweetspot.server.post.DTO.MapPostDetailResponseDTO;
 import com.sweetspot.server.post.like.PostLikeEntity;
 import com.sweetspot.server.post.like.PostLikeRepository;
 import com.sweetspot.server.user.UserRepository;
@@ -21,21 +31,27 @@ public class MapPostService {
     private final UserRepository userRepository;
     private final PinRepository pinRepository;
     private final PostLikeRepository postLikeRepository;
+    private final CommentRepository commentRepository;
+    private final PostImageRepository postImageRepository;
 
     public MapPostService(
         MapPostRepository mapPostRepository,
         UserRepository userRepository,
         PinRepository pinRepository,
-        PostLikeRepository postLikeRepository
+        PostLikeRepository postLikeRepository,
+        CommentRepository commentRepository,
+        PostImageRepository postImageRepository
     ) {
         this.mapPostRepository = mapPostRepository;
         this.userRepository = userRepository;
         this.pinRepository = pinRepository;
         this.postLikeRepository = postLikeRepository;
+        this.commentRepository = commentRepository;
+        this.postImageRepository = postImageRepository;
     }
 
     // 게시글 저장
-    public MapPostResponseDto createPost(MapPostRequestDto dto) {
+    public MapPostResponseDTO createPost(MapPostRequestDTO dto) {
         // 유저 존재 여부 확인
         if (!userRepository.existsById(dto.getUserId())) {
             throw new IllegalArgumentException("존재하지 않는 사용자입니다.");
@@ -69,8 +85,8 @@ public class MapPostService {
     }
 
     // Entity → Response DTO 변환
-    private MapPostResponseDto toDto(MapPostEntity post) {
-        MapPostResponseDto dto = new MapPostResponseDto();
+    private MapPostResponseDTO toDto(MapPostEntity post) {
+        MapPostResponseDTO dto = new MapPostResponseDTO();
         dto.setPostId(post.getPostId());
         dto.setUserId(post.getUserId());
         dto.setPinId(post.getPinId()); // 추가된 필드 반영
@@ -93,7 +109,7 @@ public class MapPostService {
         like.setPostId(postId);
         postLikeRepository.save(like);
 
-        // 게시글의 좋아요 수 반영 (선택 사항)
+        // 게시글의 좋아요 수 반영
         mapPostRepository.findById(postId).ifPresent(post -> {
             post.setLikes(post.getLikes() + 1);
             mapPostRepository.save(post);
@@ -123,14 +139,110 @@ public class MapPostService {
     }
 
     //인기 게시글 조회
-    public List<MapPostResponseDto> getTop10PopularPostsToday() {
-        LocalDateTime startOfDay = LocalDate.now().atStartOfDay(); // 오늘 00:00
-        LocalDateTime endOfDay = LocalDate.now().atTime(LocalTime.MAX); // 오늘 23:59:59.999999999
+    @Transactional(readOnly = true)
+    public List<MapPostPopularResponseDTO> getPopularPostsOfDay() {
+        LocalDateTime startOfDay = LocalDate.now().atStartOfDay();
+        LocalDateTime endOfDay = LocalDateTime.of(LocalDate.now(), LocalTime.MAX);
 
-        List<MapPostEntity> topPosts = mapPostRepository.findTop10PopularPostsOfDay(startOfDay, endOfDay);
+        List<MapPostEntity> popularPosts = mapPostRepository.findTop10PopularPostsOfDay(startOfDay, endOfDay);
 
-        return topPosts.stream()
-                .map(this::toDto)
-                .collect(Collectors.toList());
+        return popularPosts.stream().map(post -> {
+            MapPostPopularResponseDTO dto = new MapPostPopularResponseDTO();
+            dto.setPostId(post.getPostId());
+            dto.setUserId(post.getUserId());
+            dto.setTitle(post.getTitle());
+            dto.setLikes(post.getLikes());
+            dto.setUpdatedAt(post.getUpdatedAt());
+
+            // 작성자 닉네임
+            String nickname = userRepository.findById(post.getUserId())
+                .map(user -> user.getNickname())
+                .orElse("탈퇴한 사용자");
+            dto.setNickname(nickname);
+
+            // 핀 정보
+            pinRepository.findById(post.getPinId()).ifPresent(pin -> {
+                PinInfoDTO pinDto = new PinInfoDTO();
+                pinDto.setPinId(pin.getPinId());
+                pinDto.setLatitude(pin.getLatitude());
+                pinDto.setLongitude(pin.getLongitude());
+                dto.setPins(List.of(pinDto)); // 리스트로 감싸서 넣기
+            });
+
+            return dto;
+        }).collect(Collectors.toList());
+    }
+
+
+    // 전체 게시글 리스트 조회
+    @Transactional(readOnly = true)
+    public List<MapPostListResponseDTO> getAllPosts() {
+        List<MapPostEntity> posts = mapPostRepository.findAll();
+
+        return posts.stream().map(post -> {
+            // 작성자 정보 조회
+            return userRepository.findById(post.getUserId())
+                .map(user -> new MapPostListResponseDTO(
+                    post.getPostId(),
+                    post.getTitle(),
+                    post.getUpdatedAt(),
+                    post.getLikes(),
+                    user.getUserId(),
+                    user.getNickname()
+                )).orElse(null); // user가 없을 경우 null 반환 (또는 예외 처리 가능)
+        }).filter(dto -> dto != null) // null 제거
+        .collect(Collectors.toList());
+    }
+
+    //게시글 조회
+    @Transactional(readOnly = true)
+    public MapPostDetailResponseDTO getPostById(Long postId) {
+        MapPostEntity post = mapPostRepository.findById(postId)
+            .orElseThrow(() -> new IllegalArgumentException("게시글이 존재하지 않습니다."));
+
+        String nickname = userRepository.findById(post.getUserId())
+            .map(user -> user.getNickname())
+            .orElse("탈퇴한 사용자");
+
+        List<CommentDetailDTO> commentDtos = commentRepository.findByPostId(postId)
+            .stream()
+            .map(comment -> {
+                String commentNickname = userRepository.findById(comment.getUserId())
+                    .map(user -> user.getNickname())
+                    .orElse("탈퇴한 사용자");
+
+                CommentDetailDTO dto = new CommentDetailDTO();
+                dto.setCommentId(comment.getCommentId());
+                dto.setUserId(comment.getUserId());
+                dto.setNickname(commentNickname);
+                dto.setContent(comment.getContent());
+                dto.setUpdatedAt(comment.getUpdatedAt());
+                dto.setLikes(comment.getLikes());
+                return dto;
+            })
+            .collect(Collectors.toList());
+
+        // 이미지 정보 가져오기
+        List<PostImageDetailDTO> imageDtos = postImageRepository.findByPostId(postId).stream()
+            .map(img -> {
+                PostImageDetailDTO dto = new PostImageDetailDTO();
+                dto.setImageId(img.getImageId());
+                dto.setImageUrl(img.getImageUrl());
+                return dto;
+            })
+            .collect(Collectors.toList());
+
+        MapPostDetailResponseDTO dto = new MapPostDetailResponseDTO();
+        dto.setPostId(post.getPostId());
+        dto.setUserId(post.getUserId());
+        dto.setNickname(nickname);
+        dto.setTitle(post.getTitle());
+        dto.setContent(post.getContent());
+        dto.setUpdatedAt(post.getUpdatedAt());
+        dto.setLikes(post.getLikes());
+        dto.setComments(commentDtos);
+        dto.setImages(imageDtos); // 🔽 이미지 포함
+
+        return dto;
     }
 }

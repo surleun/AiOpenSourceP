@@ -11,4 +11,6 @@ public interface MapPostRepository extends JpaRepository<MapPostEntity, Long> {
            "WHERE p.updatedAt >= :startOfDay AND p.updatedAt < :endOfDay " +
            "ORDER BY p.likes DESC")
     List<MapPostEntity> findTop10PopularPostsOfDay(LocalDateTime startOfDay, LocalDateTime endOfDay);
+
+    List<MapPostEntity> findAllByOrderByUpdatedAtDesc();
 }
