@@ -3,7 +3,7 @@ package com.sweetspot.server.post.DTO;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import com.sweetspot.server.pin.PinInfoDTO;
+import com.sweetspot.server.pin.DTO.PinInfoDTO;
 
 
 public class MapPostPopularResponseDTO {

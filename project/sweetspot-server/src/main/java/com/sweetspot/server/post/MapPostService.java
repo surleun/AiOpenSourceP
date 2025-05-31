@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sweetspot.server.comment.CommentRepository;
 import com.sweetspot.server.comment.DTO.CommentDetailDTO;
 import com.sweetspot.server.pin.PinRepository;
-import com.sweetspot.server.pin.PinInfoDTO;
+import com.sweetspot.server.pin.DTO.PinInfoDTO;
 import com.sweetspot.server.post.DTO.MapPostListResponseDTO;
 import com.sweetspot.server.post.DTO.MapPostPopularResponseDTO;
 import com.sweetspot.server.post.DTO.MapPostRequestDTO;
@@ -241,7 +241,7 @@ public class MapPostService {
         dto.setUpdatedAt(post.getUpdatedAt());
         dto.setLikes(post.getLikes());
         dto.setComments(commentDtos);
-        dto.setImages(imageDtos); // 🔽 이미지 포함
+        dto.setImages(imageDtos); // 이미지 포함
 
         return dto;
     }

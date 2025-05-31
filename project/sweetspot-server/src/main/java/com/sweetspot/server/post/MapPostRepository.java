@@ -13,4 +13,5 @@ public interface MapPostRepository extends JpaRepository<MapPostEntity, Long> {
     List<MapPostEntity> findTop10PopularPostsOfDay(LocalDateTime startOfDay, LocalDateTime endOfDay);
 
     List<MapPostEntity> findAllByOrderByUpdatedAtDesc();
+    List<MapPostEntity> findByUserId(Long userId);
 }
