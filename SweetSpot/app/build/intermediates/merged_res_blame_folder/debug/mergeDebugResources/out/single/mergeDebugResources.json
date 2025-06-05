@@ -1,0 +1,250 @@
+[
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\xml_file_paths.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\xml\\file_paths.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_my_location.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_my_location.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_pin_view.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_pin_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_fragment_pin_view.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\fragment_pin_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_list_item_drawer_pin.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\list_item_drawer_pin.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_fragment_free_board.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\fragment_free_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_list_item_comment.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\list_item_comment.xml"
+    },
+    {
+        "merged": "com.gen.SweetSpot.app-debug-4:/layout_fragment_create_post.xml.flat",
+        "source": "com.gen.SweetSpot.app-main-6:/layout/fragment_create_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_custom_info_window.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\custom_info_window.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_map_pin.png.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_map_pin.png"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_placeholder_image.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_placeholder_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_nav_active_background.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\nav_active_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_send.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_send.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_menu.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_post_view.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_post_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_dialog_add_pin.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\dialog_add_pin.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_custom_marker_layout.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\custom_marker_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_user_post_list.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_user_post_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_report.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_report.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_edit.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_edit.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_bg_tag_container_outline.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\bg_tag_container_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_fragment_create_post.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\fragment_create_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_bg_circle_red_outline.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\bg_circle_red_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_post_board_item_list.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\post_board_item_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_remove_circle.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_remove_circle.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_thumb_up_background_background.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_thumb_up_background_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_bg_nav_bar.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\bg_nav_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_fragment_post_view.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\fragment_post_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_user_pin_list.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_user_pin_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_default_profile.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_default_profile.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_list_item_thumbnail.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\list_item_thumbnail.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_fragment_popular_board.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\fragment_popular_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_thumb_up.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_thumb_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_comment.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_comment.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_fragment_popular_pin.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\fragment_popular_pin.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_nav_inactive_background.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\nav_inactive_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_fragment_pin_board.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\fragment_pin_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_board.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_board.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\layout_activity_mypage.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\layout\\activity_mypage.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-debug-4:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dhgml\\.gradle\\daemon\\8.11.1\\com.gen.SweetSpot.app-main-6:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    }
+]
