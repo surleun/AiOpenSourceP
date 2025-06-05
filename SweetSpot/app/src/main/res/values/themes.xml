@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.SWEETSPOT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/gray_ddd</item>
+        <item name="colorPrimaryVariant">@color/gray_ccc</item>
+        <item name="colorOnPrimary">@color/dark_text</item>
+        <item name="colorSecondary">@color/gray_bbb</item>
+        <item name="colorOnSecondary">@color/dark_text</item>
+        <item name="android:colorBackground">@color/gray_eee</item>
+        <item name="colorSurface">@color/gray_eee</item>
+        <item name="colorOnBackground">@color/dark_text</item>
+        <item name="colorOnSurface">@color/dark_text</item>
+
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="ShapeAppearance.App.RoundedSquareImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Theme.SWEETSPOT.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    </style>
+
+</resources>
