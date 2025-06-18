@@ -30,3 +30,5 @@
 - 댓글 및 커뮤니티 기능  
 - 로그인 및 회원가입
 
+## 시연 영상
+https://youtu.be/Gv5aEUOnrFA?si=Z7uGhTjBwOWWPgyS
