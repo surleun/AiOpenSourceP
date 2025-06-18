@@ -75,10 +75,10 @@ class PostViewFragment : Fragment() {
         loadDummyComments()
 
         postLikeButton.setOnClickListener {
-            Toast.makeText(requireContext(), "게시물 좋아요 기능 (구현 예정)", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "게시물 좋아요", Toast.LENGTH_SHORT).show()
         }
         postReportButton.setOnClickListener {
-            Toast.makeText(requireContext(), "게시물 신고 기능 (구현 예정)", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "게시물 신고", Toast.LENGTH_SHORT).show()
         }
         btnSubmitPostComment.setOnClickListener {
             submitNewComment()
@@ -121,8 +121,8 @@ class PostViewFragment : Fragment() {
 
     private fun fetchDummyPostDataById(id: Long): PostItem? {
         val samplePosts = listOf(
-            PostItem(1L, 101L, "첫 번째 일반 게시물", "첫 번째 글의 전체 내용입니다...", "2024-06-01 10:00", 150, "작가1", "https://picsum.photos/seed/user101/50", "https://picsum.photos/seed/pv1/600/300", 10, 5),
-            PostItem(2L, 102L, "두 번째 일반 게시물의 내용", "두 번째 글의 전체 내용입니다...", "2024-06-02 11:00", 75, "테스터2", null, "https://picsum.photos/seed/pv2/600/300", 5, 22)
+            PostItem(1L, 101L, "학교 복사할 곳 있나요?", "리포트 복사해야 하는데 어디인지 모르겠네요", "2024-06-01 10:00", 150, "학생1", "https://picsum.photos/seed/user101/50", "https://picsum.photos/seed/pv1/600/300", 10, 5),
+            PostItem(2L, 102L, "공업수학 질문있습니다.", "두 번째 글의 전체 내용입니다...", "2024-06-02 11:00", 75, "테스터2", null, "https://picsum.photos/seed/pv2/600/300", 5, 22)
         )
         return samplePosts.find { it.id == id }
     }
