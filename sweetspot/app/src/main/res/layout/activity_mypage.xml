@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MypageActivity">
+
+    <LinearLayout
+        android:id="@+id/mypage_main_content_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/bottom_nav_container">
+
+        <LinearLayout
+            android:id="@+id/profile_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70px"
+            android:background="?attr/colorSurface"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/mypage_profile_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircleImageView"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/mypage_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="사용자 닉네임 표시 영역" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/headerMyPostsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="내 게시물 >"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMyPosts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            tools:listitem="@layout/post_board_item_list"
+            tools:itemCount="2"/>
+
+        <TextView
+            android:id="@+id/headerMyPinsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="내 핀 >"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMyPins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            tools:itemCount="2"
+            tools:listitem="@layout/post_board_item_list" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_nav_container"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_nav_bar"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/nav_map"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지도" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#CCCCCC" />
+
+        <LinearLayout
+            android:id="@+id/nav_board"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="게시판" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#CCCCCC" />
+
+        <LinearLayout
+            android:id="@+id/nav_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="마이페이지" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

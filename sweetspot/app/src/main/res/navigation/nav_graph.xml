@@ -1,0 +1,59 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.sweetspot.LoginFragment"
+        android:label="로그인">
+        <action
+            android:id="@+id/action_login_to_signUp"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_login_to_homeActivity"
+            app:destination="@id/homeActivityDestination" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.sweetspot.SignUpFragment"
+        android:label="회원가입" />
+
+    <activity
+        android:id="@+id/homeActivityDestination"
+        android:name="com.sweetspot.HomeActivity"
+        android:label="HomeActivity"
+        tools:layout="@layout/activity_home" />
+
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.sweetspot.BoardFragment"
+        android:label="Board">
+        <action android:id="@+id/action_board_to_map" app:destination="@id/mapFragment" />
+        <action android:id="@+id/action_board_to_mypage" app:destination="@id/mypageFragment" />
+        <action android:id="@+id/action_board_to_createpost" app:destination="@id/createPostFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.sweetspot.MapFragment"
+        android:label="Map">
+        <action android:id="@+id/action_map_to_board" app:destination="@id/boardFragment" />
+        <action android:id="@+id/action_map_to_mypage" app:destination="@id/mypageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mypageFragment"
+        android:name="com.sweetspot.MypageFragment"
+        android:label="MyPage">
+        <action android:id="@+id/action_mypage_to_map" app:destination="@id/mapFragment" />
+        <action android:id="@+id/action_mypage_to_board" app:destination="@id/boardFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.sweetspot.CreatePostFragment"
+        android:label="글 작성" />
+</navigation>

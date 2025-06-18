@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 화면 타이틀 -->
+        <TextView
+            android:id="@+id/tvSignUpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <!-- 프로필 사진 등록 -->
+        <ImageView
+            android:id="@+id/ivProfilePhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/ic_profile_placeholder"
+            android:scaleType="centerCrop"
+            android:contentDescription="프로필 사진"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onChoosePhotoClicked"/>
+
+        <!-- 닉네임 입력 필드 -->
+        <EditText
+            android:id="@+id/etSignUpNickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="닉네임"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"/>
+
+        <!-- 이메일 입력 및 중복 확인 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
+
+            <EditText
+                android:id="@+id/etSignUpEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="이메일/아이디"
+                android:inputType="textEmailAddress"/>
+
+            <Button
+                android:id="@+id/btnCheckEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="중복확인"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- 비밀번호 -->
+        <EditText
+            android:id="@+id/etSignUpPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호"
+            android:inputType="textPassword"
+            android:layout_marginTop="16dp"/>
+
+        <!-- 비밀번호 확인 -->
+        <EditText
+            android:id="@+id/etSignUpConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="비밀번호 확인"
+            android:inputType="textPassword"
+            android:layout_marginTop="16dp"/>
+
+        <!-- 회원가입 -->
+        <Button
+            android:id="@+id/btnSubmitSignUp"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="24dp"
+            android:text="가입하기" />
+
+    </LinearLayout>
+</ScrollView>
