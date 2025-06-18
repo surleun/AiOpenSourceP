@@ -17,10 +17,8 @@ class UserPostListActivity : AppCompatActivity() {
     private var userId: Long = 0L
 
     private val allSampleData = listOf(
-        PostItem(1L, 101L, "내가 쓴 첫 게시물", "내용1...", "2024-06-01 10:00:00", 10, "나", null, "https://picsum.photos/seed/mypost1/200", 5, 12),
-        PostItem(2L, 101L, "내가 쓴 두 번째 이야기", "내용2...", "2024-06-02 11:00:00", 5, "나", null, null, 2, 3),
-        PostItem(3L, 202L, "다른 사람의 게시물", "타인내용...", "2024-06-03 12:00:00", 20, "타인", null, "https://picsum.photos/seed/otherpost/200", 10, 20),
-        PostItem(4L, 101L, "내가 쓴 또 다른 글 (가장 최근)", "내용4...", "2024-06-04 13:00:00", 8, "나", null, "https://picsum.photos/seed/mypost3/200", 8, 15)
+        PostItem(1L, 1, "내가 쓴 첫 게시물", "내용1...", "2024-06-01 10:00:00", 10, "나", null, "https://picsum.photos/seed/mypost1/200", 5, 12),
+        PostItem(2L, 1, "내가 쓴 두 번째 이야기", "내용2...", "2024-06-02 11:00:00", 5, "나", null, null, 2, 3),
     )
 
 

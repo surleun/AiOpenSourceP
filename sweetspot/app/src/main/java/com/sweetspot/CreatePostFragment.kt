@@ -113,7 +113,7 @@ class CreatePostFragment : Fragment() {
         }
 
         btnConfigurePinShare.setOnClickListener {
-            Toast.makeText(requireContext(), "핀 공유 설정 기능 실행", Toast.LENGTH_SHORT).show()
+            openGalleryForMultipleImages()
         }
 
         btnBack.setOnClickListener {
